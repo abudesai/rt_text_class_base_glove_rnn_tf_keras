@@ -112,7 +112,9 @@ class Predictor:
             pred_obj[id_col_name] = rec[id_col_name]
             pred_obj["label"] = rec["__label"]
             pred_obj["scores"] = {
-                k: v for k, v in rec.items() if k not in [id_col_name, "__label"]
+                k: np.round(v, 5)
+                for k, v in rec.items()
+                if k not in [id_col_name, "__label"]
             }
             predictions_response.append(pred_obj)
 
