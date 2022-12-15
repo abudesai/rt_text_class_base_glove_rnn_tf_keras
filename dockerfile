@@ -9,8 +9,10 @@ RUN apt-get -y update && \
     && rm -rf /var/lib/apt/lists/*
 
 
-ARG embed_dim=50 
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt 
 
+ARG embed_dim=50 
 ENV embed_dim=${embed_dim} 
 ENV embed_file_name=glove.6B."$embed_dim"d.txt 
 
@@ -18,9 +20,6 @@ ENV embed_file_name=glove.6B."$embed_dim"d.txt
 RUN wget -P /tmp http://nlp.stanford.edu/data/glove.6B.zip
 RUN unzip /tmp/glove.6B.zip -d /tmp/
 
-
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt 
 
 COPY app ./opt/app
 WORKDIR /opt/app
@@ -40,3 +39,5 @@ RUN chmod +x train &&\
     chmod +x predict &&\
     chmod +x serve 
 
+
+# USER 1001
