@@ -25,7 +25,7 @@ COPY app ./opt/app
 WORKDIR /opt/app
 
 # move embeddings into the location where model looks for it
-RUN mv /tmp/"$embed_file_name" /opt/app/Utils/pretrained_embed
+RUN mv /tmp/$embed_file_name /opt/app/Utils/pretrained_embed
 RUN echo "export embed_dim=${embed_dim}" >> /root/.bashrc #To keep env variable on the system after restarting
 RUN echo "export embed_file_name=${embed_file_name}" >> /root/.bashrc #To keep env variable on the system after restarting
 
