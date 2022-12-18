@@ -39,5 +39,4 @@ RUN chmod +x train &&\
     chmod +x predict &&\
     chmod +x serve 
 
-
 # USER 1001
