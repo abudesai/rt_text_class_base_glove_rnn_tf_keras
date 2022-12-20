@@ -111,7 +111,7 @@ class Predictor:
             pred_obj = {}
             pred_obj[id_col_name] = rec[id_col_name]
             pred_obj["label"] = rec["__label"]
-            pred_obj["scores"] = {
+            pred_obj["probabilities"] = {
                 str(k): np.round(v, 5)
                 for k, v in rec.items()
                 if k not in [id_col_name, "__label"]
