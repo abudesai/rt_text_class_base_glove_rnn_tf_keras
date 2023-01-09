@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from Utils.preprocess.schema_handler import produce_schema_param
+from algorithm.preprocess.schema_handler import produce_schema_param
 import config
 import os
 import pickle

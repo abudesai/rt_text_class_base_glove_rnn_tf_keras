@@ -4,7 +4,7 @@
 
 consist of:
 
-#### 1- schema_hanlder.py:
+#### 1- schema_handler.py:
 
 It reads the schema parameter using recursive function.
 

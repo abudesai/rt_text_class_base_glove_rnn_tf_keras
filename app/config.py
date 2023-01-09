@@ -1,5 +1,5 @@
 import os
-from Utils.utlis import read_json_file
+from algorithm.utils import read_json_file
 import glob
 
 
@@ -65,10 +65,9 @@ print(f"file embed name: {embed_file_name}")
 
 
 PRETRAINED_EMBEDD_PATH = os.path.join(
-    app_prefix, "Utils", "pretrained_embed", embed_file_name
+    "/opt/pretrained_embed", embed_file_name
 )
-
-check_dir(os.path.join(app_prefix, "Utils", "pretrained_embed"))
+check_dir("/opt/pretrained_embed")
 
 # os.path.join("Utils","preprocess","artifacts")
 PREPROCESS_ARTIFACT_PATH = MODEL_SAVE_PATH
